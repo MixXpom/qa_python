@@ -1,3 +1,4 @@
 Start project 4 slit
 1. Тест для метода add_new_book
 2. Тест для метода set_book_genre
+3. Тест для метода get_book_genre
