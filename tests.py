@@ -22,3 +22,8 @@ class TestBooksCollector:
 
     # напиши свои тесты ниже
     # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
+    
+    def set_book_genre_horror(self):
+        collector = BooksCollector()
+        collector.add_new_book('Гордость и предубеждение и зомби', 'Ужасы')
+        assert books_genre['Гордость и предубеждение и зомби'] == 'Ужасы'
