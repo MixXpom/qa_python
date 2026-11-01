@@ -7,3 +7,4 @@ Start project 4 slit
 6. Тест для метода get_books_for_children
 7. Тест для метода add_book_in_favorites
 8. Тест для метода delete_book_from_favorites
+9. Тест для метода get_list_of_favorites_books

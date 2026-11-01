@@ -73,3 +73,11 @@ class TestBooksCollector:
         collector.add_book_in_favorites('Котопес')
         collector.delete_book_from_favorites('Гордость и предубеждение и зомби')
         assert collector.favorites == ['Котопес']
+
+    def test_get_list_of_favorites_books_one_name(self):
+        collector = BooksCollector()
+        collector.add_new_book('Гордость и предубеждение и зомби', 'Ужасы')
+        collector.add_new_book('Котопес', 'Мультфильм')
+        collector.add_new_book('Что делать, если ваш кот хочет вас убить', 'Комедии')
+        collector.add_book_in_favorites('Гордость и предубеждение и зомби')
+        assert collector.get_list_of_favorites_books() == ['Гордость и предубеждение и зомби'] 
