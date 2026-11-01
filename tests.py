@@ -81,3 +81,10 @@ class TestBooksCollector:
         collector.add_new_book('Что делать, если ваш кот хочет вас убить', 'Комедии')
         collector.add_book_in_favorites('Гордость и предубеждение и зомби')
         assert collector.get_list_of_favorites_books() == ['Гордость и предубеждение и зомби'] 
+
+
+    def test_add_new_book_add_name_more_40 (self):
+        collector = BooksCollector()
+        name = 'Легенда о Тиле Уленшпигеле и Ламме Гудзаке, их приключениях — и свирепом Пекопене Датском'
+        collector.add_new_book(name)
+        assert name not in collector.books_genre
