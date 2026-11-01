@@ -23,7 +23,36 @@ class TestBooksCollector:
     # напиши свои тесты ниже
     # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
     
-    def set_book_genre_horror(self):
+    def test_set_book_genre_horror(self):
         collector = BooksCollector()
         collector.add_new_book('Гордость и предубеждение и зомби', 'Ужасы')
-        assert books_genre['Гордость и предубеждение и зомби'] == 'Ужасы'
+        assert collector.books_genre['Гордость и предубеждение и зомби'] == 'Ужасы'
+
+    def test_get_book_genre_known_name(self):
+        collector = BooksCollector()
+        collector.add_new_book('Котопес', 'Мультфильм')
+        assert collector.get_book_genre('Котопес') == 'Мультфильм'
+
+
+    def test_get_books_with_specific_genre_horror(self):
+        collector = BooksCollector()
+        collector.add_new_book('Гордость и предубеждение и зомби', 'Ужасы')
+        collector.add_new_book('Котопес', 'Мультфильм')
+        collector.add_new_book('Что делать, если ваш кот хочет вас убить', 'Комедии')
+        assert collector.get_books_with_specific_genre('Ужасы') == ['Гордость и предубеждение и зомби']
+
+    
+    def test_get_books_genre_three_names(self):
+        collector = BooksCollector()
+        collector.add_new_book('Гордость и предубеждение и зомби', 'Ужасы')
+        collector.add_new_book('Котопес', 'Мультфильм')
+        collector.add_new_book('Что делать, если ваш кот хочет вас убить', 'Комедии')
+        assert collector.get_books_genre() == {'Гордость и предубеждение и зомби': 'Ужасы', 'Котопес': 'Мультфильм', 'Что делать, если ваш кот хочет вас убить': 'Комедии'}
+
+    def test_get_books_for_children_comedy(self):
+        collector = BooksCollector()
+        collector.genre_age_rating = ['Ужасы', 'Триллеры']
+        collector.genre = ['Комедии', 'Сказки', 'Приключения']
+        collector.add_new_book('Гордость и предубеждение и зомби', 'Ужасы')
+        collector.add_new_book('Что делать, если ваш кот хочет вас убить', 'Комедии')
+        assert collector.get_books_for_children() == ['Что делать, если ваш кот хочет вас убить']    
