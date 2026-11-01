@@ -3,5 +3,6 @@ Start project 4 slit
 2. Тест для метода set_book_genre
 3. Тест для метода get_book_genre
 4. Тест для метода get_books_with_specific_genre
-5. ТЕст для метода get_books_genre
-6. Тест для метода test_get_books_for_children
+5. Тест для метода get_books_genre
+6. Тест для метода get_books_for_children
+7. Тест для метода add_book_in_favorites
