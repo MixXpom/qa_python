@@ -20,9 +20,7 @@ class TestBooksCollector:
         # словарь books_rating, который нам возвращает метод get_books_rating, имеет длину 2
         assert len(collector.get_books_rating()) == 2
 
-    # напиши свои тесты ниже
-    # чтобы тесты были независимыми в каждом из них создавай отдельный экземпляр класса BooksCollector()
-    
+      
     def test_set_book_genre_horror(self):
         collector = BooksCollector()
         collector.add_new_book('Гордость и предубеждение и зомби', 'Ужасы')
@@ -83,7 +81,7 @@ class TestBooksCollector:
         assert collector.get_list_of_favorites_books() == ['Гордость и предубеждение и зомби'] 
 
 
-    def test_add_new_book_add_name_more_40 (self):
+    def test_add_new_book_add_name_more_40(self):
         collector = BooksCollector()
         name = 'Легенда о Тиле Уленшпигеле и Ламме Гудзаке, их приключениях — и свирепом Пекопене Датском'
         collector.add_new_book(name)
